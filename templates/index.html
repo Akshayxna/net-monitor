@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- This line refreshes the page every 1 second -->
+    <meta http-equiv="refresh" content="1">
+    <title>Net-Monitor Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #2d2d2d;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid #444;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #61dafb;
+        }
+
+        .stat-box {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #3b3b3b;
+            border-radius: 10px;
+        }
+
+        .label {
+            font-size: 0.9em;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .up {
+            color: #4caf50;
+        }
+
+        /* Green for Upload */
+        .down {
+            color: #2196f3;
+        }
+
+        /* Blue for Download */
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Network Traffic Monitor</h1>
+
+        <div class="stat-box">
+            <div class="label">Download Speed</div>
+            <div class="value down">{{ "%.2f"|format(download) }} <span style="font-size:0.5em">Bytes/s</span></div>
+        </div>
+
+        <div class="stat-box">
+            <div class="label">Upload Speed</div>
+            <div class="value up">{{ "%.2f"|format(upload) }} <span style="font-size:0.5em">Bytes/s</span></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
