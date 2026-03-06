@@ -1,0 +1,22 @@
+name: Docker compose Linter
+
+# 1. WHEN SHOULD THE ROBOT WAKEUP 
+
+on: 
+  push:
+    branches: [main]
+  pull_requests: 
+    branches: [main]
+
+#2. What should the Robot do
+
+jobs: 
+  validate-docker: 
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: validate docker compose file
+        uses: docker-compose config
