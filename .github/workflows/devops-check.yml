@@ -4,9 +4,9 @@ name: Docker compose Linter
 
 on: 
   push:
-    branches: [main]
+    branches: [master]
   pull_requests: 
-    branches: [main]
+    branches: [master]
 
 #2. What should the Robot do
 
