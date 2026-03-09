@@ -9,3 +9,4 @@ COPY . .
 
 # 4. Tell the container to start the Python server on port 8000
 CMD ["python", "-m", "http.server", "8000"]# Triggering build
+# Force Trigger 1
