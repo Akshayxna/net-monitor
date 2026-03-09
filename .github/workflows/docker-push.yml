@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
     paths:
-      - './advances-stack/**'
+      - './advanced-stack/**'
 
 jobs: 
   build-and-push:
@@ -26,10 +26,3 @@ jobs:
           context: ./advanced-stack
           push: true
           tags: ak099/net-monitor:v1
-
-
-
-  
-
-  
-  
