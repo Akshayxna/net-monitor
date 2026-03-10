@@ -58,7 +58,7 @@ services:
       - frontend
 
   web_app:
-    image: ak009/net-monitor:v1
+    image: ak099/net-monitor:v1
     command: python -m http.server 8000
     networks:
       - frontend
