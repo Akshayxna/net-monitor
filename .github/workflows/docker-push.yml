@@ -29,7 +29,7 @@ jobs:
 
   deploy: 
     needs: build-and-push
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Deploy with SSH Action
@@ -42,7 +42,7 @@ jobs:
             cd /home/ubuntu
             sudo docker pull web_app
             sudo docker compose up -d web_app
-            
+
       - name: Deployment Summary
         run: |
           echo "🚀 Deployment Successful!"
