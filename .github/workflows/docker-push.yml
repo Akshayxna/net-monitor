@@ -26,3 +26,24 @@ jobs:
           context: ./advanced-stack
           push: true
           tags: ak099/net-monitor:v1
+
+  deploy: 
+    needs: build-and-push
+    runs-on: ubuntu:latest
+
+    steps:
+      - name: Deploy with SSH Action
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}`
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          script: |
+            cd /home/ubuntu
+            sudo docker pull web_app
+            sudo docker compose up -d web_app
+            
+      - name: Deployment Summary
+        run: |
+          echo "🚀 Deployment Successful!"
+          echo "Check the live app here: http://${{ secrets.ALB_URL }}"
